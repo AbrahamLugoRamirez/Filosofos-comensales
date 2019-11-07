@@ -65,8 +65,6 @@ public class filosofo extends Thread  {
         System.out.println("Filosofo "+id+" Saciado");
         main.filosofosStatus.get(id).setIcon(main.saciadoImg);
         controlador.Saciado(id);   
-        main.progress.setValue(100);
-        System.out.println("Total " + main.total + "cx: " + main.cxf);
     }
 
 }
