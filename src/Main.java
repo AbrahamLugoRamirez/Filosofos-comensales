@@ -28,6 +28,7 @@ public class Main extends javax.swing.JFrame {
     static public ArrayList<JLabel> filosofosStatus = new ArrayList<JLabel>();
     static public ArrayList<JLabel> tenedor = new ArrayList<JLabel>();
     static public ArrayList<JLabel> comidas = new ArrayList<JLabel>();
+    static public ArrayList<JLabel> filosofos = new ArrayList<JLabel>();
     static public ImageIcon pensandoImg = new ImageIcon("src/Pictures/pensando.png");
     static public ImageIcon saciadoImg = new ImageIcon("src/Pictures/saciado.png");
     static public ImageIcon hambreImg = new ImageIcon("src/Pictures/hambre.png");
@@ -100,6 +101,16 @@ public class Main extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel10 = new javax.swing.JPanel();
+        n1 = new javax.swing.JLabel();
+        n2 = new javax.swing.JLabel();
+        n3 = new javax.swing.JLabel();
+        n4 = new javax.swing.JLabel();
+        n5 = new javax.swing.JLabel();
+        n6 = new javax.swing.JLabel();
+        n7 = new javax.swing.JLabel();
+        n8 = new javax.swing.JLabel();
+        n9 = new javax.swing.JLabel();
+        n10 = new javax.swing.JLabel();
         f8 = new javax.swing.JLabel();
         f3 = new javax.swing.JLabel();
         f4 = new javax.swing.JLabel();
@@ -305,35 +316,25 @@ public class Main extends javax.swing.JFrame {
         jPanel10.setBackground(new java.awt.Color(0, 153, 204));
         jPanel10.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        f8.setText("f8");
+        jPanel10.add(n1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 20, 20));
+        jPanel10.add(n2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 30, 20, 20));
+        jPanel10.add(n3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 10, 20));
+        jPanel10.add(n4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 20, 20));
+        jPanel10.add(n5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 230, 20, 20));
+        jPanel10.add(n6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 10, 10));
+        jPanel10.add(n7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 300, 10, 10));
+        jPanel10.add(n8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 20, 20));
+        jPanel10.add(n9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 20, 20));
+        jPanel10.add(n10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, 20, 20));
         jPanel10.add(f8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 60, 60));
-
-        f3.setText("f3");
         jPanel10.add(f3, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 30, 60, 60));
-
-        f4.setText("f4");
         jPanel10.add(f4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 60, 60));
-
-        f5.setText("f5");
         jPanel10.add(f5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 190, 60, 60));
-
-        f6.setText("f6");
         jPanel10.add(f6, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 60, 60));
-
-        f7.setText("f7");
         jPanel10.add(f7, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 290, 60, 60));
-
-        f10.setText("f10");
         jPanel10.add(f10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 60, 60));
-
-        f2.setText("f2");
         jPanel10.add(f2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, -10, 60, 60));
-
-        f9.setText("f9");
         jPanel10.add(f9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 190, 60, 60));
-
-        f1.setText("f1");
         jPanel10.add(f1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, 60, 60));
 
         tenedor1.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
@@ -409,6 +410,7 @@ public class Main extends javax.swing.JFrame {
             tabla(n);
             Filosofos(n);
             for (int cont = 0; cont < n; cont++) {
+                filosofos.get(cont).setText((cont + 1) + "");
                 filosofosStatus.get(cont).setIcon(pensandoImg);
 //                tenedor.get(cont).setIcon(tenedorr);
                 tenedor(cont, n);
@@ -462,6 +464,12 @@ public class Main extends javax.swing.JFrame {
                 comidas.add(comida7);
                 comidas.add(comida9);
 
+                filosofos.add(n1);
+                filosofos.add(n3);
+                filosofos.add(n5);
+                filosofos.add(n7);
+                filosofos.add(n9);
+
                 break;
             case 8:
                 filosofosStatus.add(f1);
@@ -491,6 +499,15 @@ public class Main extends javax.swing.JFrame {
                 comidas.add(comida7);
                 comidas.add(comida8);
                 comidas.add(comida9);
+
+                filosofos.add(n1);
+                filosofos.add(n2);
+                filosofos.add(n3);
+                filosofos.add(n5);
+                filosofos.add(n6);
+                filosofos.add(n7);
+                filosofos.add(n8);
+                filosofos.add(n9);
 
                 break;
             case 10:
@@ -527,6 +544,16 @@ public class Main extends javax.swing.JFrame {
                 comidas.add(comida9);
                 comidas.add(comida10);
 
+                filosofos.add(n1);
+                filosofos.add(n2);
+                filosofos.add(n3);
+                filosofos.add(n4);
+                filosofos.add(n5);
+                filosofos.add(n6);
+                filosofos.add(n7);
+                filosofos.add(n8);
+                filosofos.add(n9);
+                filosofos.add(n10);
                 break;
 
             default:
@@ -739,6 +766,16 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel mesa;
+    private javax.swing.JLabel n1;
+    private javax.swing.JLabel n10;
+    private javax.swing.JLabel n2;
+    private javax.swing.JLabel n3;
+    private javax.swing.JLabel n4;
+    private javax.swing.JLabel n5;
+    private javax.swing.JLabel n6;
+    private javax.swing.JLabel n7;
+    private javax.swing.JLabel n8;
+    private javax.swing.JLabel n9;
     private javax.swing.JComboBox<String> nFilosofos;
     public static javax.swing.JProgressBar progress;
     private javax.swing.JTable tabla;
