@@ -27,50 +27,46 @@ public class filosofo extends Thread  {
     public void pensando() {
         System.out.println("Filosofo " + id + " pensando");
         main.filosofosStatus.get(id).setIcon(main.pensandoImg);
-        main.total =  main.total +1;
-        main.progress.setValue(((main.total)*100)/(main.cxf));          
-        
         try {
             Thread.sleep((int) (Math.random()*8000+5000));                
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
 
     public void comer() {
-//        if (nComidas < 10) {
         nComidas++;
         System.out.println("Filosofo " + id + " comiendo -> Numero comida: " + nComidas);
-        main.total =  main.total +1;
-        main.progress.setValue(((main.total)*100)/(main.cxf));    
         try {
             Thread.sleep((int) (Math.random() * 5000 + 5000) );
         } catch (Exception e) {
             System.out.println(e);
-        }
-        
-//        }else{
-//           
-//        }
-        
+        }        
     }
 
     public void run() {
-        do {              
+        do { 
+            main.total =  main.total +1;
+            main.progress.setValue(((main.total)*100)/(main.cxf)); 
             pensando();
+            main.total =  main.total +1;
+            main.progress.setValue(((main.total)*100)/(main.cxf)); 
             controlador.tomarTenedores(id);
+            main.total =  main.total +1;
+            main.progress.setValue(((main.total)*100)/(main.cxf)); 
             comer();
+            main.total =  main.total +1;
+            main.progress.setValue(((main.total)*100)/(main.cxf)); 
             controlador.soltarTenedores(id); 
             main.modelo.setValueAt((main.numRand-nComidas), id, 2);
             main.total =  main.total +1;
             main.progress.setValue(((main.total)*100)/(main.cxf));            
         } while (nComidas< num);
         System.out.println("Filosofo "+id+" Saciado");
-        main.total =  main.total +1;
-        main.progress.setValue(((main.total)*100)/(main.cxf));    
         main.filosofosStatus.get(id).setIcon(main.saciadoImg);
         controlador.Saciado(id);   
+        main.progress.setValue(100);
+        System.out.println("Total " + main.total + "cx: " + main.cxf);
     }
 
 }

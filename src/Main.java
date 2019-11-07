@@ -45,7 +45,6 @@ public class Main extends javax.swing.JFrame {
     static public ImageIcon ocho = new ImageIcon("src/Pictures/8.png");
     static public ImageIcon nueve = new ImageIcon("src/Pictures/9.png");
     static public ImageIcon diez = new ImageIcon("src/Pictures/10.png");
-
     int n;
     static public int numRand;
 
@@ -397,22 +396,22 @@ public class Main extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
+        //Se inabilita el botton para evitar errores por el usuario
         jButton1.setEnabled(false);
         try {
-
+            //Se crean los hilos
             n = Integer.parseInt(nFilosofos.getSelectedItem().toString());
-
             Controlador c = new Controlador(n);
             filosofo f[] = new filosofo[n];
+            //numero random menor que 10
             numRand = (int) (Math.random() * 10 + 1);
-            cxf = 5 * (n * numRand);
-
+            cxf = 5 * n * numRand;
+            
             tabla(n);
             Filosofos(n);
             for (int cont = 0; cont < n; cont++) {
                 filosofos.get(cont).setText((cont + 1) + "");
                 filosofosStatus.get(cont).setIcon(pensandoImg);
-//                tenedor.get(cont).setIcon(tenedorr);
                 tenedor(cont, n);
                 comidas.get(cont).setIcon(comida);
                 f[cont] = new filosofo(cont, c, numRand);
@@ -444,7 +443,7 @@ public class Main extends javax.swing.JFrame {
     }
 
     public void Filosofos(int n) {
-
+        //Asina cad filosofo a un jLbel en especifico
         switch (n) {
             case 5:
                 filosofosStatus.add(f1);

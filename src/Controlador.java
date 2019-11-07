@@ -20,7 +20,6 @@ public class Controlador {
     private int n;
     private int estado[];
     Main main;
-
     public Controlador(int n) {
         this.n = n;
         estado = new int[n];
@@ -28,14 +27,13 @@ public class Controlador {
 
     public synchronized void tomarTenedores(int id) {
         estado[id] = hambriento;
-        prueba(id);
+        prueba(id);  
         while (estado[id] != comiendo) {
             try {
                 main.modelo.setValueAt("Esperando", id, 1);
 
                 System.out.println("Filosofo " + id + " Esta esperando");
-                main.filosofosStatus.get(id).setIcon(main.hambreImg);
-                main.total =  main.total +1;
+               
                 main.progress.setValue(((main.total)*100)/(main.cxf));    
                 wait();
             } catch (Exception e) {
@@ -54,9 +52,6 @@ public class Controlador {
         }
         main.tenedor(id, n);
         main.tenedor(der, n);
-        
-//        main.tenedor.get(id).setIcon(main.tenedorr);
-//        main.tenedor.get(der).setIcon(main.tenedorr);
         estado[id] = pensando;
         main.modelo.setValueAt("Pensando", id, 1);
         main.filosofosStatus.get(id).setIcon(main.pensandoImg);
